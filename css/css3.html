@@ -1,0 +1,172 @@
+<html !DOCTYPE html>
+
+<head>
+    <title> CSS3 </title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+
+
+    <style>
+        .img {
+            width: 70%;
+            height: auto;
+        }
+
+        .card {
+            width: 70%;
+            /* margin: 10px; */
+            /*  display: flex;
+            justify-content: center;
+            align-items: center;  */
+            background-color: #f2f2f2;
+            overflow: hidden;
+        }
+
+        .main {
+            /* display: flex;
+            justify-content: space-around; */
+            margin: auto;
+            width: 70%;
+        }
+
+        .padding {
+            padding: 10px;
+        }
+
+        .border {
+            border: 2px solid black;
+            margin-top: 10px;
+        }
+
+        body {
+            font-family: 'Roboto';
+            background-color: #e6e6e6;
+            overflow-y: auto;
+        }
+
+        .border-radius {
+            border-radius: 50%;
+        }
+
+        .box-shadow {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .hover-effect:hover {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .text-lowercase {
+            text-transform: lowercase;
+        }
+
+        .text-capitalize {
+            text-transform: capitalize;
+        }
+
+        .chat-with-us {
+            width: 50px;
+            margin: auto;
+            border-radius: 50px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: yellow;
+            text-align: center;
+            color: black;
+        }
+
+        .search {
+            position: fixed;
+            top: 40px;
+            right: 50px;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+        }
+
+        .suggestions {
+            background-color: white;
+            border: 1px solid black;
+            margin-top: 5px;
+            padding: 5px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> CSS3 </h1>
+    <h2> This is a heading 2</h2>
+    <h3> This is a heading 3</h3>
+    <h4> This is a heading 4</h4>
+    <h5> This is a heading 5</h5>
+    <h6> This is a heading 6</h6>
+
+    <div class="main">
+        <img src="../penguin.png" class="img border padding" />
+
+
+        <div class="card border padding">
+            <img src="../penguin.png" class="img" />
+            <h3> Learning React js this is a card</h3>
+            <p>This is a paragraph</p>
+            <ul>
+                <li> React js is a library </li>
+                <li> React js is used for building user interfaces </li>
+                <li> React js is developed by Facebook </li>
+        </div>
+
+        <div>
+            <img src="../penguin.png" class="img border padding border-radius" />
+        </div>
+        <div>
+            <h1 class="text-center text-capitalize">This is Heading tag in center</h1>
+        </div>
+
+        <div>
+            <h1 class="bg-blue text-white padding hover-effect"> This is a heading with background color and hover
+                effect</h1>
+        </div>
+
+        <div class="chat-with-us text-center padding ">
+            chat with us
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search..." />
+
+            <div class="suggestions">
+                <p> Suggestions will appear here </p>
+                <div>
+                    <p> Suggestion 1 </p>
+                    <p> Suggestion 2 </p>
+                    <p> Suggestion 3 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> Asyn await</title>
+         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            // var eamil = "rahul@gmail.com";
+            // var password = "Rahul@01";
+
+            // console.log(eamil + ' ' + password);
+
+            // var response = await axios.get("https://www.softwareschool.co/")
+            // console.log(response);
+            async function login() {
+                try {
+                    const response = await axios.get("https://dummyjson.com/products/1");
+                    console.log(response.data);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+             async function getProduct(id) {
+                try {
+                    const response = await axios.get("https://dummyjson.com/products/" + id);
+                    console.log(response.data);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            getProduct(1);
+                    
+        </script>
+    
+    </head>
+
+    <body>
+        <h3> Async await</h3>
+    </body>
+</html>

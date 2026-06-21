@@ -1,0 +1,82 @@
+//1. Add try catch blocks to login, signup, add-product-to-cart, delete-from-wishlist functions
+<html>
+    <head>
+        <title> Assignment </title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            async function login() {
+                  try {
+                    const loginDetails = {
+                        email: "rahulakula2015@gmail.com",
+                        password: "9963178796@Rahul"
+                    };
+
+                    const response = await axios.post(
+                        "https://api.softwareschool.co/auth/login",
+                        loginDetails
+                    );
+
+                    console.log(response.data);
+                } catch (error) {
+                    console.error("Login failed:", error);
+                }
+                
+            }
+
+            async function signup() {
+                try {
+                    var email ="rahul@gmail.com";
+                    var pwd = "123456";
+                    var name = "Rahul";
+                    var mobile = "9963178796";
+                    if(email.length > 1 && pwd.length > 7 && name.length > 2 && mobile.length == 10){
+
+                        const signup ={name: "Rahul", email: "rahul@gmail.com", mobile: "9999999999", password: "Rahul@07"};
+
+                        const response = await axios.post(
+                        "https://api.softwareschool.co/auth/signup",
+                        loginDetails
+                    );
+                        console.log("SIGN UP SUCCESS");
+                    }else{
+                        console.log("SIGN UP FAILED");
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+                
+            }
+
+            var products = [];
+
+            function addProduct(productName) {
+                products.push(productName);
+            }
+
+            function removeProduct(productName) {
+                var index = products.indexOf(productName);
+
+                if (index !== -1) {
+                    products.splice(index, 1);
+                    console.log(productName + " removed");
+                } else {
+                    console.log(productName + " not found");
+                }
+            }
+
+        addProduct("Laptop");
+        addProduct("Mobile");
+        addProduct("Watch");
+
+        console.log(products);
+
+        removeProduct("Mobile");
+
+        console.log(products);
+            
+        </script>
+    </head>
+    <body>
+        <h3>Assignment</h3>
+    </body>
+</html>

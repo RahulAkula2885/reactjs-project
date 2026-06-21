@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Login Form</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script>
+            async function login() {
+                try {
+                    const loginDetails = {
+                        email: "rahulakula2015@gmail.com",
+                        password: "9963178796@Rahul"
+                    };
+
+                    const response = await axios.post(
+                        "https://api.softwareschool.co/auth/login",
+                        loginDetails
+                    );
+
+                    console.log(response.data);
+                } catch (error) {
+                    console.error("Login failed:", error);
+                }
+            }
+
+            login();
+</script>
+    </head>
+
+    <body>
+        <h3> Login form</h3>
+    </body>
+</html>

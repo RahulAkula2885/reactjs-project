@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scroll Top & Bottom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .section {
+            height: 700px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Floating Button */
+        #scrollBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        #scrollBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h1>Top Section</h1>
+        <p>Scroll down or click the button.</p>
+    </div>
+
+    <div class="section">
+        <h1>Middle Section</h1>
+        <p>More content here.</p>
+    </div>
+
+    <div class="section">
+        <h1>Bottom Section</h1>
+        <p>You reached the bottom.</p>
+    </div>
+
+    <button id="scrollBtn">↓</button>
+
+    <script>
+        const btn = document.getElementById("scrollBtn");
+
+        btn.addEventListener("click", () => {
+            const isAtBottom =
+                window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+            if (isAtBottom) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            } else {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: "smooth"
+                });
+            }
+        });
+
+        window.addEventListener("scroll", () => {
+            const isAtBottom =
+                window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+
+            btn.textContent = isAtBottom ? "↑" : "↓";
+        });
+    </script>
+
+</body>
+</html>
